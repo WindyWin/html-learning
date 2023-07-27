@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+
+}
+
+.child {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 150px;
+    color: white;
+    text-align: center;
+}
+
+#child1 {
+    background-color: red;
+}
+
+#child2 {
+    background-color: blue;
+}
+
+#child3 {
+    background-color: green;
+}
+
+#child4 {
+    background-color: yellow;
+}
+
+#child5 {
+    background-color: orange;
+}
+
+/* create a css variable */
+:root {
+    --scroll-button-size: 30px;
+    --scroll-button-space: 10px;
+}
+
+.scroll-button__container {
+    position: fixed;
+    bottom: 0;
+    right: calc(50% - 5*var(--scroll-button-size) / 2 - 4*var(--scroll-button-space) / 2);
+    z-index: 100;
+    display: flex;
+    gap: var(--scroll-button-space);
+}
+
+.scroll-button {
+    width: var(--scroll-button-size);
+    height: var(--scroll-button-size);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.427);
+    cursor: pointer;
+}
+
+.scroll-button.active {
+    background-color: rgba(255, 255, 255, 0.8);
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll snap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="child-list">
+            <li class="child" id="child1">
+                <p>1</p>
+            </li>
+            <li class="child" id="child2">
+                <p>2</p>
+            </li>
+            <li class="child" id="child3">
+                <p>3</p>
+            </li>
+            <li class="child" id="child4">
+                <p>4</p>
+            </li>
+            <li class="child" id="child5">
+                <p>5</p>
+            </li>
+        </ul>
+    </div>
+    <div class="scroll-button__container">
+        <a class="scroll-button active" href="#child1" id="button-1"></a>
+        <a class="scroll-button" href="#child2" id="button-2"></a>
+        <a class="scroll-button" href="#child3" id="button-3"></a>
+        <a class="scroll-button" href="#child4" id="button-4"></a>
+        <a class="scroll-button" href="#child5" id="button-5"></a>
+    </div>
+</body>
+<script>
+    let container = document.querySelector('.container')
+    let containerBounds = null
+    let currentItem = 0
+    let itemIndex = 0
+    let scrollButtons = document.querySelectorAll('.scroll-button')
+
+    // Store items as an array of objects
+    const items = Array.from(document.querySelectorAll('.child')).map(el => ({ el }))
+
+    const storeBounds = () => {
+        // Store the bounds of the container
+        containerBounds = container.getBoundingClientRect() // triggers reflow
+        // Store the bounds of each item
+        items.forEach((item, i) => {
+            item.bounds = item.el.getBoundingClientRect() // triggers reflow
+            item.offsetY = item.bounds.top - containerBounds.top // store item offset distance from container
+        })
+    }
+    storeBounds() // Store bounds on load
+
+    const detectCurrent = () => {
+        const scrollY = container.scrollTop // Container scroll position
+        const goal = containerBounds.height / 2 // Where we want the current item to be, 0 = top of the container
+        prevItem = currentItem
+        const oldItemIndex = itemIndex
+        itemIndex = 0
+        // Find item closest to the goal
+        currentItem = items.reduce((prev, curr) => {
+            const check = (Math.abs(curr.offsetY - scrollY - goal) < Math.abs(prev.offsetY - scrollY - goal))
+
+            if (check) itemIndex++
+
+            return check ? curr : prev;// return the closest to the goal
+        })
+
+        // Do stuff with currentItem
+        // here
+        if (oldItemIndex !== itemIndex) {
+            scrollButtons[oldItemIndex].classList.remove('active')
+            scrollButtons[itemIndex].classList.add('active')
+        }
+
+
+    }
+    detectCurrent() // Detect the current item on load
+
+    container.addEventListener('scroll', () => detectCurrent()) // Detect current item on scroll
+    container.addEventListener('resize', () => storeBounds()) // Update bounds on resize in case they have changed
+</script>
+
+</html>
