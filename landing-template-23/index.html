@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              darkBg: '#0D0F1B'
+              
+            },
+            backgroundImage:{
+                'img': "url('./unsplash_jSAb1ifwf8y.png')",
+                'linear-white': " linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.13) 100%);"
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        .root{
+            background: url(./unsplash_jSAb1ifwf8Y.png) #0D0F1B;
+            background-position: 100% 0%;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="root font-sans text-white pt-32 px-14 pb-20">
+        <div class="banner-container w-1/2 ">
+            <h1 class="font-bold text-8xl font-mono">DESIGN THE FUTURE</h1>
+            <p class="my-4 text-justify text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem error omnis perspiciatis nemo. Optio sed eum adipisci cumque quas, aliquid amet qui voluptas voluptatibus molestias, ea quisquam delectus quaerat officia!
+            </p>
+            <button class="bg-white  text-darkBg font-semibold rounded-2xl w-40 h-12 mt-2 hover:bg-gray-200 active:bg-green-200">Get started</button>
+            
+        </div>
+        <div class="list-item-container flex gap-8 mt-10">
+            <div class="item flex-grow bg-transparent p-10 bg-linear-white rounded-xl">
+                <div class="item-title text-4xl mb-4 font-semibold">
+                    01
+                </div>
+                <div class="description text-justify">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolore officiis qui incidunt, a animi dolores nobis libero totam consequuntur dolorum laborum iste temporibus molestias enim iusto excepturi molestiae nesciunt!
+                </div>
+            </div>
+            <div class="item flex-grow bg-transparent p-10 bg-linear-white rounded-xl">
+                <div class="item-title text-4xl mb-4 font-semibold">
+                    02
+                </div>
+                <div class="description text-justify">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolore officiis qui incidunt, a animi dolores nobis libero totam consequuntur dolorum laborum iste temporibus molestias enim iusto excepturi molestiae nesciunt!
+                </div>
+            </div> <div class="item flex-grow bg-transparent p-10 bg-linear-white rounded-xl">
+                <div class="item-title text-4xl mb-4 font-semibold">
+                    03
+                </div>
+                <div class="description text-justify">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolore officiis qui incidunt, a animi dolores nobis libero totam consequuntur dolorum laborum iste temporibus molestias enim iusto excepturi molestiae nesciunt!
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
