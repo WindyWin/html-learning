@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>landing template</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #888;
+      border-radius: 5px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #000;
+      border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="root bg-white h-screen w-screen font-sans  gap-10 py-14 px-28 flex flex-col ">
+    <section class="banner-section flex justify-between gap-2">
+      <div class="banner-section-text ">
+        <p class="banner-section-text-title h-20 font-bold font text-6xl ">New designs</p>
+        <p class="banner-section-text-title h-20 font-bold font text-6xl ">New inspirations</p>
+        <p class="banner-section-text-subtitle text-xl ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.</p>
+        <button
+          class="banner-section-text__btn bg-gray-950 text-white font-light rounded-3xl h-12 w-40 mt-10">Explore</button>
+
+      </div>
+      <div class="banner-section-image w-1/2 object-cover aspect-auto shadow-sm">
+        <img src="./bg.png" alt="bg">
+
+      </div>
+    </section>
+    <section
+      class=" bg-gray-950 grow  w-full h-max rounded-3xl flex text-gray-400 justify-between p-12 flex-auto gap-28">
+      <div class="item flex-grow">
+        <div class="icon">
+          cloud icon
+        </div>
+        <div class="title text-3xl font-semibold mb-4 ">
+          Title 1
+        </div>
+        <div class="description text-xl">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+      </div>
+      <div class="item flex-grow">
+        <div class="icon">
+          cloud icon
+        </div>
+        <div class="title text-3xl font-semibold mb-4 ">
+          Title 1
+        </div>
+        <div class="description text-xl">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+
+      </div>
+      <div class="item flex-grow">
+        <div class="icon">
+          cloud icon
+        </div>
+        <div class="title text-3xl font-semibold mb-4 ">
+          Title 1
+        </div>
+        <div class="description text-xl">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+      </div>
+
+    </section>
+  </div>
+</body>
+
+</html>
