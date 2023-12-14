@@ -1,0 +1,11 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import url(./assets/css/clash-display.css);
+
+*{
+    transition: all 0.3s ease-out 0s;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
