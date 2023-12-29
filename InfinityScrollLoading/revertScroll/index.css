@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.list{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 3rem;
+    align-items: center;
+}
+.item{
+    width:  25%;
+    aspect-ratio: 1/1;
+    border:1px solid brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    list-style-type: none;
+    font-size: 3rem;
+
+}

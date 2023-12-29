@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.sybling {
+    height: 100%;
+}
+
+#target {
+    width: 30%;
+    aspect-ratio: 1/1;
+    background: hsl(0, 0%, 11%);
+}
